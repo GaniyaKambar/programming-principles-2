@@ -1,0 +1,153 @@
+Python Classes
+class IOString():
+    def __init__(self):
+        self.str1 = ""
+​
+    def get_String(self):
+        self.str1 = input()
+​
+    def print_String(self):
+        print(self.str1.upper())
+​
+str1 = IOString()
+str1.get_String()
+str1.print_String()
+ganiya
+GANIYA
+2
+class Shape():
+    def __init__(self):
+        pass
+​
+    def area(self):
+        return 0
+​
+class Square(Shape):
+    def __init__(self,length = 0):
+        Shape.__init__(self)
+        self.length = length
+​
+    def area(self):
+        return self.length*self.length
+​
+Asqr = Square(5)
+print(Asqr.area())      
+​
+print(Square().area()) 
+25
+0
+3
+class Shape():
+    def __init__(self):
+        pass
+​
+class Rectangle():
+    def __init__(self,l,w):
+        self.length = l
+        self.width = w
+​
+    def area(self):
+        return self.length*self.width
+​
+​
+rect = Rectangle(2,4)
+print(rect.area())
+8
+4. Point class
+import math
+​
+​
+class Point(object):
+    """Class to handle point in a 2 dimensions space"""
+​
+    def __init__(self, x, y):
+        """
+        :param x: the value on the X-axis
+        :type x: float
+        :param y: the value on the Y-axis
+        :type y: float
+        """
+        self.x = x
+        self.y = y
+​
+​
+    def show(self):
+        """
+        :return: the coordinate of this point
+        :rtype: a tuple of 2 elements (float, float)
+        """
+        return self.x, self.y
+​
+​
+    def move(self, x, y):
+        """
+        :param x: the value to move on the X-axis
+        :type x: float
+        :param y: the value to move on the Y-axis
+        :type y: float
+        """
+        self.x += x
+        self.y += y
+​
+​
+    def dist(self, pt):
+        """
+        :param pt: the point to compute the distance with
+        :type pt: :class:`Point` object
+        :return: the distance between this point ant pt
+        :rtype: int
+        """
+        dx = pt.x - self.x
+        dy = pt.y - self.y
+        return math.sqrt(dx ** 2 + dy ** 2)
+5. Class account
+class Account:
+    def __init__(self,owner,balance=0):
+        self.owner = owner
+        self.balance = balance
+        
+    def __str__(self):
+        return f'Account owner:   {self.owner}\nAccount balance: ${self.balance}'
+        
+    def deposit(self,dep_amt):
+        self.balance += dep_amt
+        print('Deposit Accepted')
+        
+    def withdraw(self,wd_amt):
+        if self.balance >= wd_amt:
+            self.balance -= wd_amt
+            print('Withdrawal Accepted')
+        else:
+            print('Funds Unavailable!')
+# 1. Instantiate the class
+acct1 = Account('Jose',100)
+# 2. Print the object
+print(acct1)
+Account owner:   Jose
+Account balance: $100
+# 3. Show the account owner attribute
+acct1.owner
+'Jose'
+# 4. Show the account balance attribute
+acct1.balance
+# 5. Make a series of deposits and withdrawals
+acct1.deposit(50)
+Deposit Accepted
+acct1.withdraw(75)
+Withdrawal Accepted
+# 6. Make a withdrawal that exceeds the available balance
+acct1.withdraw(500)
+Funds Unavailable!
+6
+​
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+~\AppData\Local\Temp\ipykernel_14140\926521895.py in <module>
+      5         i -= 1
+      6 
+----> 7 reverse_num = int(input())
+      8 for i in reverse(reverse_num):
+      9     print(i, end=" ")
+
+ValueError: invalid literal for int() with base 10: ''
